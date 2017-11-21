@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <body>
+        <div id="container"></div>
+        <script src="./v2.js"></script>
+        <script src="./jquery.js"></script>
+
+        <script>
+            function hello() {
+                alert('hello')
+            }
+            let ele = React.createElement('div',{id:'test',onclick:hello},'click me')
+            React.render(ele,document.getElementById("container"))
+        </script>
+    </body>
+</html>
