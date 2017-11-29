@@ -65,19 +65,6 @@ React = {
         $(document).trigger('mountReady');
     }
 }
-//component类，用来表示文本在渲染，更新，删除时应该做些什么事情
-function ReactDOMTextComponent(text) {
-    //存下当前的字符串
-    this._currentElement = ''+text;
-    //用来标识当前component
-    this._rootNodeID = null;
-}
-
-//component渲染时生成的dom结构
-ReactDOMTextComponent.prototype.mountComponent = function(rootID) {
-    this._rootNodeID = rootID;
-    return `<span data-reactid="${rootID}">${this._currentElement}</span>`;
-}
 
 //component工厂 用来返回一个component实例
 function instantiateReactComponent(node){
@@ -97,6 +84,19 @@ function instantiateReactComponent(node){
         return new ReactCompositeComponent(node);
 
     }
+}
+//component类，用来表示文本在渲染，更新，删除时应该做些什么事情
+function ReactDOMTextComponent(text) {
+    //存下当前的字符串
+    this._currentElement = ''+text;
+    //用来标识当前component
+    this._rootNodeID = null;
+}
+
+//component渲染时生成的dom结构
+ReactDOMTextComponent.prototype.mountComponent = function(rootID) {
+    this._rootNodeID = rootID;
+    return `<span data-reactid="${rootID}">${this._currentElement}</span>`;
 }
 
 //component类，用来表示文本在渲染，更新，删除时应该做些什么事情
