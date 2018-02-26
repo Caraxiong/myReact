@@ -154,7 +154,7 @@ ReactDOMComponent.prototype.mountComponent = function(rootID){
     var content = '';
     var children = props.children || [];
 
-    var childrenInstances = []; //用于保存所有的子节点的componet实例，以后会用到
+    var childrenInstances = []; //用于保存所有的子节点的component实例，以后会用到
     var that = this;
     $.each(children, function(key, child) {
         //这里再次调用了instantiateReactComponent实例化子节点component类，拼接好返回
